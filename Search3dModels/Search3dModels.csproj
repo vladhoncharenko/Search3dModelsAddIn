@@ -117,6 +117,7 @@
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
@@ -126,28 +127,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="EventHandling.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="View\AddModelsFromFolder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="View\AddModelsFromFolder.Designer.cs">
+      <DependentUpon>AddModelsFromFolder.cs</DependentUpon>
     </Compile>
-    <Compile Include="PMPHandler.cs" />
-    <Compile Include="SwAddin.cs">
+    <Compile Include="Controller\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UserPMPage.cs" />
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="View\ConnectionSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConnectionSettings.Designer.cs">
+      <DependentUpon>ConnectionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddModel.Designer.cs">
+      <DependentUpon>AddModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GetModels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GetModels.Designer.cs">
+      <DependentUpon>GetModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\SwAddin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="View\AddModelsFromFolder.resx">
+      <DependentUpon>AddModelsFromFolder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolbarLarge.bmp" />
-    <EmbeddedResource Include="ToolbarSmall.bmp" />
-    <EmbeddedResource Include="MainIconLarge.bmp" />
-    <EmbeddedResource Include="MainIconSmall.bmp" />
+    <EmbeddedResource Include="View\ConnectionSettings.resx">
+      <DependentUpon>ConnectionSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddModel.resx">
+      <DependentUpon>AddModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GetModels.resx">
+      <DependentUpon>GetModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ToolbarLarge.bmp" />
+    <EmbeddedResource Include="Resources\ToolbarSmall.bmp" />
+    <EmbeddedResource Include="Resources\MainIconLarge.bmp" />
+    <EmbeddedResource Include="Resources\MainIconSmall.bmp" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -160,6 +185,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
