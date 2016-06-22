@@ -19,161 +19,161 @@
    
         private void InitializeComponent()
         {
-            this.assFromFolderButton = new System.Windows.Forms.Button();
-            this.AddNodelButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.nameGetModel = new System.Windows.Forms.TextBox();
-            this.heighGetModel = new System.Windows.Forms.TextBox();
-            this.lengthGetModel = new System.Windows.Forms.TextBox();
-            this.widthGetModel = new System.Windows.Forms.TextBox();
-            this.privateModelCheckBox = new System.Windows.Forms.CheckBox();
-            this.SuspendLayout();
+            assFromFolderButton = new System.Windows.Forms.Button();
+            AddModelButton = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            nameGetModel = new System.Windows.Forms.TextBox();
+            heighGetModel = new System.Windows.Forms.TextBox();
+            lengthGetModel = new System.Windows.Forms.TextBox();
+            widthGetModel = new System.Windows.Forms.TextBox();
+            privateModelCheckBox = new System.Windows.Forms.CheckBox();
+            SuspendLayout();
             // 
             // assFromFolderButton
             // 
-            this.assFromFolderButton.Location = new System.Drawing.Point(61, 337);
-            this.assFromFolderButton.Name = "assFromFolderButton";
-            this.assFromFolderButton.Size = new System.Drawing.Size(239, 23);
-            this.assFromFolderButton.TabIndex = 0;
-            this.assFromFolderButton.Text = "Add Models From Folder";
-            this.assFromFolderButton.UseVisualStyleBackColor = true;
-            this.assFromFolderButton.Click += new System.EventHandler(this.button1_Click);
+            assFromFolderButton.Location = new System.Drawing.Point(61, 337);
+            assFromFolderButton.Name = "assFromFolderButton";
+            assFromFolderButton.Size = new System.Drawing.Size(239, 23);
+            assFromFolderButton.TabIndex = 0;
+            assFromFolderButton.Text = "Add Models From Folder";
+            assFromFolderButton.UseVisualStyleBackColor = true;
+            assFromFolderButton.Click += new System.EventHandler(button1_Click);
             // 
-            // AddNodelButton
+            // AddModelButton
             // 
-            this.AddNodelButton.Location = new System.Drawing.Point(61, 245);
-            this.AddNodelButton.Name = "AddNodelButton";
-            this.AddNodelButton.Size = new System.Drawing.Size(239, 39);
-            this.AddNodelButton.TabIndex = 1;
-            this.AddNodelButton.Text = "Add";
-            this.AddNodelButton.UseVisualStyleBackColor = true;
-            this.AddNodelButton.Click += new System.EventHandler(this.button1_Click_1);
+            AddModelButton.Location = new System.Drawing.Point(61, 245);
+            AddModelButton.Name = "AddModelButton";
+            AddModelButton.Size = new System.Drawing.Size(239, 39);
+            AddModelButton.TabIndex = 1;
+            AddModelButton.Text = "Add";
+            AddModelButton.UseVisualStyleBackColor = true;
+            AddModelButton.Click += new System.EventHandler(button1_Click_1);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(61, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Name:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(61, 38);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(38, 13);
+            label1.TabIndex = 2;
+            label1.Text = "Name:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Heigh:";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(61, 76);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(38, 13);
+            label2.TabIndex = 3;
+            label2.Text = "Heigh:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Length:";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(61, 113);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(43, 13);
+            label3.TabIndex = 4;
+            label3.Text = "Length:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 151);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Width:";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(61, 151);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(38, 13);
+            label4.TabIndex = 5;
+            label4.Text = "Width:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(167, 304);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Or:";
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(167, 304);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(21, 13);
+            label5.TabIndex = 6;
+            label5.Text = "Or:";
             // 
             // nameGetModel
             // 
-            this.nameGetModel.Location = new System.Drawing.Point(147, 35);
-            this.nameGetModel.Name = "nameGetModel";
-            this.nameGetModel.Size = new System.Drawing.Size(153, 20);
-            this.nameGetModel.TabIndex = 7;
+            nameGetModel.Location = new System.Drawing.Point(147, 35);
+            nameGetModel.Name = "nameGetModel";
+            nameGetModel.Size = new System.Drawing.Size(153, 20);
+            nameGetModel.TabIndex = 7;
             // 
             // heighGetModel
             // 
-            this.heighGetModel.Location = new System.Drawing.Point(147, 73);
-            this.heighGetModel.Name = "heighGetModel";
-            this.heighGetModel.Size = new System.Drawing.Size(153, 20);
-            this.heighGetModel.TabIndex = 8;
+            heighGetModel.Location = new System.Drawing.Point(147, 73);
+            heighGetModel.Name = "heighGetModel";
+            heighGetModel.Size = new System.Drawing.Size(153, 20);
+            heighGetModel.TabIndex = 8;
             // 
             // lengthGetModel
             // 
-            this.lengthGetModel.Location = new System.Drawing.Point(147, 113);
-            this.lengthGetModel.Name = "lengthGetModel";
-            this.lengthGetModel.Size = new System.Drawing.Size(153, 20);
-            this.lengthGetModel.TabIndex = 9;
+            lengthGetModel.Location = new System.Drawing.Point(147, 113);
+            lengthGetModel.Name = "lengthGetModel";
+            lengthGetModel.Size = new System.Drawing.Size(153, 20);
+            lengthGetModel.TabIndex = 9;
             // 
             // widthGetModel
             // 
-            this.widthGetModel.Location = new System.Drawing.Point(147, 148);
-            this.widthGetModel.Name = "widthGetModel";
-            this.widthGetModel.Size = new System.Drawing.Size(153, 20);
-            this.widthGetModel.TabIndex = 10;
+            widthGetModel.Location = new System.Drawing.Point(147, 148);
+            widthGetModel.Name = "widthGetModel";
+            widthGetModel.Size = new System.Drawing.Size(153, 20);
+            widthGetModel.TabIndex = 10;
             // 
             // privateModelCheckBox
             // 
-            this.privateModelCheckBox.AutoSize = true;
-            this.privateModelCheckBox.Location = new System.Drawing.Point(147, 201);
-            this.privateModelCheckBox.Name = "privateModelCheckBox";
-            this.privateModelCheckBox.Size = new System.Drawing.Size(91, 17);
-            this.privateModelCheckBox.TabIndex = 11;
-            this.privateModelCheckBox.Text = "Private Model";
-            this.privateModelCheckBox.UseVisualStyleBackColor = true;
+            privateModelCheckBox.AutoSize = true;
+            privateModelCheckBox.Location = new System.Drawing.Point(147, 201);
+            privateModelCheckBox.Name = "privateModelCheckBox";
+            privateModelCheckBox.Size = new System.Drawing.Size(91, 17);
+            privateModelCheckBox.TabIndex = 11;
+            privateModelCheckBox.Text = "Private Model";
+            privateModelCheckBox.UseVisualStyleBackColor = true;
             // 
             // AddModel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 387);
-            this.Controls.Add(this.privateModelCheckBox);
-            this.Controls.Add(this.widthGetModel);
-            this.Controls.Add(this.lengthGetModel);
-            this.Controls.Add(this.heighGetModel);
-            this.Controls.Add(this.nameGetModel);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.AddNodelButton);
-            this.Controls.Add(this.assFromFolderButton);
-            this.Name = "AddModel";
-            this.Text = "Add Model";
-            this.Load += new System.EventHandler(this.AddModel_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(373, 387);
+            Controls.Add(privateModelCheckBox);
+            Controls.Add(widthGetModel);
+            Controls.Add(lengthGetModel);
+            Controls.Add(heighGetModel);
+            Controls.Add(nameGetModel);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(AddModelButton);
+            Controls.Add(assFromFolderButton);
+            Name = "AddModel";
+            Text = "Add Model";
+            Load += new System.EventHandler(AddModel_Load);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button assFromFolderButton;
-        private System.Windows.Forms.Button AddNodelButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox nameGetModel;
-        private System.Windows.Forms.TextBox heighGetModel;
-        private System.Windows.Forms.TextBox lengthGetModel;
-        private System.Windows.Forms.TextBox widthGetModel;
-        private System.Windows.Forms.CheckBox privateModelCheckBox;
+        public static System.Windows.Forms.Button assFromFolderButton;
+        public static System.Windows.Forms.Button AddModelButton;
+        public static System.Windows.Forms.Label label1;
+        public static System.Windows.Forms.Label label2;
+        public static System.Windows.Forms.Label label3;
+        public static System.Windows.Forms.Label label4;
+        public static System.Windows.Forms.Label label5;
+        public static System.Windows.Forms.TextBox nameGetModel;
+        public static System.Windows.Forms.TextBox heighGetModel;
+        public static System.Windows.Forms.TextBox lengthGetModel;
+        public static System.Windows.Forms.TextBox widthGetModel;
+        public static System.Windows.Forms.CheckBox privateModelCheckBox;
     }
 }

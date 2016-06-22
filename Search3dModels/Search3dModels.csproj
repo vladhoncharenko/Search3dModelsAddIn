@@ -127,6 +127,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AddModelController.cs" />
+    <Compile Include="Model\SolidWorksUtils.cs" />
+    <Compile Include="Model\Utils.cs" />
     <Compile Include="View\AddModelsFromFolder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,10 +172,10 @@
     <EmbeddedResource Include="View\GetModels.resx">
       <DependentUpon>GetModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ToolbarLarge.bmp" />
-    <EmbeddedResource Include="Resources\ToolbarSmall.bmp" />
-    <EmbeddedResource Include="Resources\MainIconLarge.bmp" />
-    <EmbeddedResource Include="Resources\MainIconSmall.bmp" />
+    <EmbeddedResource Include="ToolbarLarge.bmp" />
+    <EmbeddedResource Include="ToolbarSmall.bmp" />
+    <EmbeddedResource Include="MainIconLarge.bmp" />
+    <EmbeddedResource Include="MainIconSmall.bmp" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -187,7 +190,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

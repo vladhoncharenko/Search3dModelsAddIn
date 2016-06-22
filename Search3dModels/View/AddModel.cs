@@ -8,15 +8,17 @@ using System.Text;
 using System.Windows.Forms;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
+using Search3dModels.Controller;
 
 namespace Search3dModels
 {
     public partial class AddModel : Form
     {
 
-    ISldWorks swAppAddModel;
-    SwAddin addModelAddin; 
+    public static ISldWorks swAppAddModel;
+    public static SwAddin addModelAddin;
 
+    
     public AddModel(SwAddin addin)
         {
             addModelAddin = addin;
@@ -48,12 +50,14 @@ namespace Search3dModels
 
     private void AddModel_Load(object sender, EventArgs e)
     {
-
+        AddModelController.setModelSizesInForm();
     }
 
     private void button1_Click_1(object sender, EventArgs e)
     {
+       
+    }
 
-    }
-    }
+    
+}
 }
