@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Search3dModels.Model
 {
-    class SolidWorksUtils
+    class SolidWorksUtil
     {        
         const double MaxDouble = 1.79769313486231E+308;
         const double MinDouble = -1.79769313486231E+308;
