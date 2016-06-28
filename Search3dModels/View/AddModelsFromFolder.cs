@@ -8,19 +8,21 @@ using System.Text;
 using System.Windows.Forms;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
+using System.IO;
+using Search3dModels.Controller;
 
 namespace Search3dModels
 {
     public partial class AddModelsFromFolder : Form
     {
 
-        ISldWorks swAddModelsFromFolderApp; 
-        SwAddin addModelsFromFolderAddin;  
+        public static ISldWorks swAddModelsFromFolderApp;
+        public static SwAddin addModelsFromFolderAddin;  
 public AddModelsFromFolder(SwAddin addin)
 {
     addModelsFromFolderAddin = addin; 
     swAddModelsFromFolderApp = addin.SwApp;
-            InitializeComponent();
+    InitializeComponent();
 }
 public AddModelsFromFolder()
 {
@@ -36,28 +38,23 @@ private void MyNewForm_FormClosed(object sender, FormClosedEventArgs e)
 }
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            
+            AddModelsFromFolderController.addSelectedModelstoDb(AddModelsFromFolder.modelsFromFolderLB);
+            this.Close();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            fbd.Description = "Select folder with models";
-            fbd.ShowNewFolderButton = false;           
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                selectedPath.Text = fbd.SelectedPath;
-            }
+            AddModelsFromFolderController.getModelsFromFolder();        
         }
 
-        private void AddModelsFromFolder_Load(object sender, EventArgs e)
+        private void addAllutton_Click(object sender, EventArgs e)
         {
-
+            AddModelsFromFolderController.addAllModelstoDb(AddModelsFromFolder.modelsFromFolderLB);
+            this.Close();
+            
         }
-
-        
-
-       
+     
+                     
     }
 }

@@ -31,7 +31,7 @@ namespace Search3dModels.Controller
        {
            ModelDoc2 swModel = default(ModelDoc2);
            swModel = (ModelDoc2)AddModel.swAppAddModel.ActiveDoc;    
-           if (DataBaseUtil.addModelToDataBase(1, AddModel.nameGetModel.Text, Single.Parse(AddModel.heighGetModel.Text),
+           if (DataBaseUtil.addModelToDataBase(AddModel.nameGetModel.Text, Single.Parse(AddModel.heighGetModel.Text),
                 Single.Parse(AddModel.lengthGetModel.Text), Single.Parse(AddModel.widthGetModel.Text), AddModel.privateModelCheckBox.Checked, Utils.modelToBytes(swModel)))
            {
                MessageBox.Show("Model was added!", "Search 3D Models", MessageBoxButtons.OK);

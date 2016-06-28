@@ -28,83 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.addSelectedButton = new System.Windows.Forms.Button();
-            this.modelsFromFolderDataGridView = new System.Windows.Forms.DataGridView();
-            this.selectButton = new System.Windows.Forms.Button();
-            this.addAllutton = new System.Windows.Forms.Button();
-            this.selectedPath = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.modelsFromFolderDataGridView)).BeginInit();
-            this.SuspendLayout();
+            addSelectedButton = new System.Windows.Forms.Button();
+            selectButton = new System.Windows.Forms.Button();
+            addAllutton = new System.Windows.Forms.Button();
+            selectedPath = new System.Windows.Forms.TextBox();
+            modelsFromFolderLB = new System.Windows.Forms.ListBox();
+            privateModelCheckBox = new System.Windows.Forms.CheckBox();
+            SuspendLayout();
             // 
             // addSelectedButton
             // 
-            this.addSelectedButton.Location = new System.Drawing.Point(135, 363);
-            this.addSelectedButton.Name = "addSelectedButton";
-            this.addSelectedButton.Size = new System.Drawing.Size(102, 23);
-            this.addSelectedButton.TabIndex = 0;
-            this.addSelectedButton.Text = "Add Selected";
-            this.addSelectedButton.UseVisualStyleBackColor = true;
-            this.addSelectedButton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // modelsFromFolderDataGridView
-            // 
-            this.modelsFromFolderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.modelsFromFolderDataGridView.Location = new System.Drawing.Point(28, 66);
-            this.modelsFromFolderDataGridView.Name = "modelsFromFolderDataGridView";
-            this.modelsFromFolderDataGridView.Size = new System.Drawing.Size(574, 281);
-            this.modelsFromFolderDataGridView.TabIndex = 1;
+            addSelectedButton.Location = new System.Drawing.Point(135, 363);
+            addSelectedButton.Name = "addSelectedButton";
+            addSelectedButton.Size = new System.Drawing.Size(102, 23);
+            addSelectedButton.TabIndex = 0;
+            addSelectedButton.Text = "Add Selected";
+            addSelectedButton.UseVisualStyleBackColor = true;
+            addSelectedButton.Click += new System.EventHandler(button1_Click);
             // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(527, 22);
-            this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(75, 23);
-            this.selectButton.TabIndex = 2;
-            this.selectButton.Text = "Select";
-            this.selectButton.UseVisualStyleBackColor = true;
-            this.selectButton.Click += new System.EventHandler(this.button2_Click);
+            selectButton.Location = new System.Drawing.Point(527, 20);
+            selectButton.Name = "selectButton";
+            selectButton.Size = new System.Drawing.Size(75, 23);
+            selectButton.TabIndex = 2;
+            selectButton.Text = "Select";
+            selectButton.UseVisualStyleBackColor = true;
+            selectButton.Click += new System.EventHandler(button2_Click);
             // 
             // addAllutton
             // 
-            this.addAllutton.Location = new System.Drawing.Point(382, 363);
-            this.addAllutton.Name = "addAllutton";
-            this.addAllutton.Size = new System.Drawing.Size(75, 23);
-            this.addAllutton.TabIndex = 3;
-            this.addAllutton.Text = "Add All";
-            this.addAllutton.UseVisualStyleBackColor = true;
+            addAllutton.Location = new System.Drawing.Point(382, 363);
+            addAllutton.Name = "addAllutton";
+            addAllutton.Size = new System.Drawing.Size(75, 23);
+            addAllutton.TabIndex = 3;
+            addAllutton.Text = "Add All";
+            addAllutton.UseVisualStyleBackColor = true;
+            addAllutton.Click += new System.EventHandler(addAllutton_Click);
             // 
             // selectedPath
             // 
-            this.selectedPath.Location = new System.Drawing.Point(28, 22);
-            this.selectedPath.Name = "selectedPath";
-            this.selectedPath.Size = new System.Drawing.Size(481, 20);
-            this.selectedPath.TabIndex = 4;
+            selectedPath.Location = new System.Drawing.Point(28, 22);
+            selectedPath.Name = "selectedPath";
+            selectedPath.Size = new System.Drawing.Size(481, 20);
+            selectedPath.TabIndex = 4;
+            // 
+            // modelsFromFolderLB
+            // 
+            modelsFromFolderLB.FormattingEnabled = true;
+            modelsFromFolderLB.Location = new System.Drawing.Point(28, 85);
+            modelsFromFolderLB.Name = "modelsFromFolderLB";
+            modelsFromFolderLB.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            modelsFromFolderLB.Size = new System.Drawing.Size(574, 251);
+            modelsFromFolderLB.TabIndex = 5;
+            // 
+            // privateModelCheckBox
+            // 
+            privateModelCheckBox.AutoSize = true;
+            privateModelCheckBox.Location = new System.Drawing.Point(28, 56);
+            privateModelCheckBox.Name = "privateModelCheckBox";
+            privateModelCheckBox.Size = new System.Drawing.Size(96, 17);
+            privateModelCheckBox.TabIndex = 6;
+            privateModelCheckBox.Text = "Private Models";
+            privateModelCheckBox.UseVisualStyleBackColor = true;
             // 
             // AddModelsFromFolder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 398);
-            this.Controls.Add(this.selectedPath);
-            this.Controls.Add(this.addAllutton);
-            this.Controls.Add(this.selectButton);
-            this.Controls.Add(this.modelsFromFolderDataGridView);
-            this.Controls.Add(this.addSelectedButton);
-            this.Name = "AddModelsFromFolder";
-            this.Text = "Add Models From Folder";
-            this.Load += new System.EventHandler(this.AddModelsFromFolder_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.modelsFromFolderDataGridView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(633, 398);
+            Controls.Add(privateModelCheckBox);
+            Controls.Add(modelsFromFolderLB);
+            Controls.Add(selectedPath);
+            Controls.Add(addAllutton);
+            Controls.Add(selectButton);
+            Controls.Add(addSelectedButton);
+            Name = "AddModelsFromFolder";
+            Text = "Add Models From Folder";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button addSelectedButton;
-        private System.Windows.Forms.DataGridView modelsFromFolderDataGridView;
-        private System.Windows.Forms.Button selectButton;
-        private System.Windows.Forms.Button addAllutton;
-        private System.Windows.Forms.TextBox selectedPath;
+        public static System.Windows.Forms.Button addSelectedButton;
+        public static System.Windows.Forms.Button selectButton;
+        public static System.Windows.Forms.Button addAllutton;
+        public static System.Windows.Forms.TextBox selectedPath;
+        public static System.Windows.Forms.ListBox modelsFromFolderLB;
+        public static System.Windows.Forms.CheckBox privateModelCheckBox;
+
+
+
     }
 }

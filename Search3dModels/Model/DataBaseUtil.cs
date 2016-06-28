@@ -11,18 +11,21 @@ namespace Search3dModels.Model
    static class DataBaseUtil
     {
        private static System.Data.DataSet ds = new System.Data.DataSet();
-       public static Boolean addModelToDataBase(int userID, string modelName, float modelX, float modelY, float modelZ,bool modelPrivate,byte[] modelfle)
+       public static Boolean addModelToDataBase(string modelName, float modelX, float modelY, float modelZ,bool modelPrivate,byte[] modelfle)
        {
         try{
-
-            NpgsqlConnection connection = DataBaseConnect.getConnection();
-            int firstUserId= 1;           
+            if (Utils.getPassword().Length == 0 || Utils.getLogin().Length == 0) {
+                MessageBox.Show("Please, log-in in your account or create new in the settings window" , "You need to log-in", MessageBoxButtons.OK);
+                return false;
+            }
+            NpgsqlConnection connection = DataBaseConnect.getConnection();              
             connection.Open();
 
             NpgsqlCommand command = new NpgsqlCommand();
             command.Connection=connection;
             command.CommandText = "INSERT INTO models (user_id, model_name, model_x,model_y,model_z,model_private,model_file) VALUES (@user_id, @model_name, @model_x,@model_y,@model_z,@model_private,@model_file);";
-            command.Parameters.AddWithValue("@user_id", firstUserId);
+            command.Parameters.AddWithValue("@model_name", modelName);
+            command.Parameters.AddWithValue("@user_id", getUserIdByLoginAndPassword(Utils.getLogin(), Utils.getPassword()));
             command.Parameters.AddWithValue("@model_name", modelName);
             command.Parameters.AddWithValue("@model_x", modelX);
             command.Parameters.AddWithValue("@model_y", modelY);
@@ -61,16 +64,7 @@ namespace Search3dModels.Model
             try
             {
                 NpgsqlConnection connection = DataBaseConnect.getConnection();               
-                connection.Open();
-                //NpgsqlCommand command = new NpgsqlCommand();
-               // command.Connection = connection;
-               // command.CommandText = "SELECT user_id FROM users where user_mail=@user_mail and user_password=@user_password;";
-               // command.Parameters.AddWithValue("@login", login);
-               // command.Parameters.AddWithValue("@password", password);
-               // Int64 count = (Int64)command.ExecuteScalar();                         
-                
-
-
+                connection.Open();            
                 string SQL = "SELECT user_id FROM users where user_mail='" + login + "' and user_password='" + password + "';";
 
                 NpgsqlCommand command = new NpgsqlCommand(SQL, connection);
@@ -89,8 +83,26 @@ namespace Search3dModels.Model
                 return false;
             }
             
+        }
+
+        public static int getUserIdByLoginAndPassword(string login, string password)
+        {
+            try
+            {
+                NpgsqlConnection connection = DataBaseConnect.getConnection();
+                connection.Open();
+                string SQL = "SELECT user_id FROM users where user_mail='"+login+"' and user_password='"+password+"';";            
+                NpgsqlCommand command = new NpgsqlCommand(SQL, connection);                   
+                Int32 count = (Int32)command.ExecuteScalar();           
+                connection.Close();                      
+                return count;               
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "getUserIdByLoginAndPassword()", MessageBoxButtons.OK);
+                return 1;
+            }
+
         } 
-
-
     }
 }

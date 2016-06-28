@@ -53,6 +53,7 @@ namespace Search3dModels
     private void button1_Click_1(object sender, EventArgs e)
     {
         AddModelController.addModelToDataBase();
+        this.Close();
     }
 
     
