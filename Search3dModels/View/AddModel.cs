@@ -28,22 +28,18 @@ namespace Search3dModels
         }
 
     private void AddModelForm_FormClosed(object sender, FormClosedEventArgs e)  
-        {
-        
+        {        
           addModelAddin.AddModelForm = null;          
-          GC.Collect();
-          
+          GC.Collect();          
         }
+
     private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+            try{   
                 AddModelsFromFolder addModelsFromFolderForm = new AddModelsFromFolder();       
                 addModelsFromFolderForm.Show();
-
             }
-            catch
-            {
+            catch{
 
             }
 

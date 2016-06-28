@@ -40,7 +40,7 @@ namespace Search3dModels.Model
             modelSizes[0] = Math.Round(Math.Abs(X_max - X_min), 3);
             modelSizes[1] = Math.Round(Math.Abs(Y_max - Y_min), 3);
             modelSizes[2] = Math.Round(Math.Abs(Z_max - Z_min), 3);
-
+            
             Array.Sort(modelSizes);
             Array.Reverse(modelSizes);
             return modelSizes;

@@ -8,13 +8,15 @@ using System.Text;
 using System.Windows.Forms;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
+using Search3dModels.Model;
+using Search3dModels.Controller;
 
 namespace Search3dModels
 {
     public partial class ConnectionSettings : Form
     {
-        ISldWorks swConnectionSettingsApp; 
-        SwAddin connectionSettingsAddin; 
+        static ISldWorks swConnectionSettingsApp;
+        static SwAddin connectionSettingsAddin; 
         public ConnectionSettings(SwAddin addin)
         {
             connectionSettingsAddin = addin;
@@ -30,7 +32,21 @@ namespace Search3dModels
        
         private void button1_Click(object sender, EventArgs e)
         {
-            swConnectionSettingsApp.SendMsgToUser2("Моё сообщение 3", (int)swMessageBoxIcon_e.swMbInformation, (int)swMessageBoxBtn_e.swMbOk);
+            if (ConnectionSettingsController.validateAndSaveLoginPAssword()) {
+                MessageBox.Show("Your account is connected!", "Success", MessageBoxButtons.OK);
+            };     
         }
+
+        private void selectFolderToSaveModels_Click(object sender, EventArgs e)
+        {
+            ConnectionSettingsController.selectFolder();          
+        }
+
+        private void ConnectionSettings_Load(object sender, EventArgs e)
+        {
+            ConnectionSettingsController.onLoad();         
+        }
+
+       
     }
 }

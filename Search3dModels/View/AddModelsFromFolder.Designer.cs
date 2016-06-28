@@ -92,6 +92,7 @@
             this.Controls.Add(this.addSelectedButton);
             this.Name = "AddModelsFromFolder";
             this.Text = "Add Models From Folder";
+            this.Load += new System.EventHandler(this.AddModelsFromFolder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.modelsFromFolderDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
