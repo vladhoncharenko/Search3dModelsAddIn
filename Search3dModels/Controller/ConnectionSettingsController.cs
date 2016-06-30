@@ -9,7 +9,7 @@ namespace Search3dModels.Controller
 {
    static class ConnectionSettingsController
     {
-       public static bool validateAndSaveLoginPAssword() {
+       public static bool ValidateAndSaveLoginPAssword() {
 
            if (Utils.ConnectionValidator(ConnectionSettings.loginInput.Text, ConnectionSettings.passwordInput.Text)){
                return Utils.SaveConnectionProperties(ConnectionSettings.loginInput.Text, ConnectionSettings.passwordInput.Text);
@@ -19,7 +19,7 @@ namespace Search3dModels.Controller
            }      
        }
 
-       public static bool selectFolder()
+       public static bool SelectFolder()
        {
          FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.Description = "Select folder with models";
@@ -31,16 +31,16 @@ namespace Search3dModels.Controller
                 return false;
             }          
        }
-       public static void onLoad()
+       public static void OnLoad()
        {
-           if (Utils.getModelsFolder().Length==0){
+           if (Utils.GetModelsFolder().Length==0){
                string myDocuments = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
                ConnectionSettings.selectedFolderForModels.Text = myDocuments + @"\Search3DModels\Models\";
            }else{
-              ConnectionSettings.selectedFolderForModels.Text = Utils.getModelsFolder();
+              ConnectionSettings.selectedFolderForModels.Text = Utils.GetModelsFolder();
            }  
-           ConnectionSettings.loginInput.Text=Utils.getLogin();
-           ConnectionSettings.passwordInput.Text = Utils.getPassword();
+           ConnectionSettings.loginInput.Text=Utils.GetLogin();
+           ConnectionSettings.passwordInput.Text = Utils.GetPassword();
        }
     }
 }

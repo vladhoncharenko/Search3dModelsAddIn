@@ -15,22 +15,22 @@ namespace Search3dModels.Model
     {
         private static System.Data.DataSet ds = new System.Data.DataSet();
 
-        public static Boolean addModelToDataBase(string modelName, float modelX, float modelY, float modelZ, bool modelPrivate, byte[] modelfle)
+        public static Boolean AddModelToDataBase(string modelName, float modelX, float modelY, float modelZ, bool modelPrivate, byte[] modelfle)
         {
             try
             {
-                if (Utils.getPassword().Length == 0 || Utils.getLogin().Length == 0)
+                if (Utils.GetPassword().Length == 0 || Utils.GetLogin().Length == 0)
                 {
                     MessageBox.Show("Please, log-in in your account or create new in the settings window", "You need to log-in", MessageBoxButtons.OK);
                     return false;
                 }
-                NpgsqlConnection connection = DataBaseConnect.getConnection();
+                NpgsqlConnection connection = DataBaseConnect.GetConnection();
                 connection.Open();
 
                 NpgsqlCommand command = new NpgsqlCommand();
                 command.Connection = connection;
                 command.CommandText = "INSERT INTO models (user_id, model_name, model_x,model_y,model_z,model_private,model_file) VALUES (@user_id, @model_name, @model_x,@model_y,@model_z,@model_private,@model_file);";
-                command.Parameters.AddWithValue("@user_id", getUserIdByLoginAndPassword(Utils.getLogin(), Utils.getPassword()));
+                command.Parameters.AddWithValue("@user_id", getUserIdByLoginAndPassword(Utils.GetLogin(), Utils.GetPassword()));
                 command.Parameters.AddWithValue("@model_name", modelName);
                 command.Parameters.AddWithValue("@model_x", modelX);
                 command.Parameters.AddWithValue("@model_y", modelY);
@@ -54,7 +54,7 @@ namespace Search3dModels.Model
         {
             try
             {
-                NpgsqlConnection connection = DataBaseConnect.getConnection();
+                NpgsqlConnection connection = DataBaseConnect.GetConnection();
                 connection.Open();
                 NpgsqlCommand command = new NpgsqlCommand();
                 command.Connection = connection;
@@ -69,7 +69,7 @@ namespace Search3dModels.Model
                     command.CommandText = "select model_id,model_name,model_x,model_y,model_z from models where model_x=@model_x and model_y=@model_y and model_z=@model_z and user_id=@user_id;";
                 }
 
-                command.Parameters.AddWithValue("@user_id", getUserIdByLoginAndPassword(Utils.getLogin(), Utils.getPassword()));
+                command.Parameters.AddWithValue("@user_id", getUserIdByLoginAndPassword(Utils.GetLogin(), Utils.GetPassword()));
                 command.Parameters.AddWithValue("@model_x", modelX);
                 command.Parameters.AddWithValue("@model_y", modelY);
                 command.Parameters.AddWithValue("@model_z", modelZ);
@@ -79,7 +79,7 @@ namespace Search3dModels.Model
                 if (dr.HasRows)
                 {
                     //TODO: Make getModelFromDataBase() returns NpgsqlDataReader, and use this method with result  
-                    GetModelsController.setViewDataGrid(dr);
+                    GetModelsController.SetViewDataGrid(dr);
 
                 }
                 else
@@ -101,7 +101,7 @@ namespace Search3dModels.Model
         {
             try
             {
-                NpgsqlConnection connection = DataBaseConnect.getConnection();
+                NpgsqlConnection connection = DataBaseConnect.GetConnection();
                 connection.Open();
                 NpgsqlCommand command = new NpgsqlCommand();
                 command.Connection = connection;
@@ -119,7 +119,7 @@ namespace Search3dModels.Model
                     " model_y>@minModel_y and model_y<@maxModel_y and model_z>@minModel_z and model_z<@maxModel_z and user_id=@user_id;";
                 }
 
-                command.Parameters.AddWithValue("@user_id", getUserIdByLoginAndPassword(Utils.getLogin(), Utils.getPassword()));
+                command.Parameters.AddWithValue("@user_id", getUserIdByLoginAndPassword(Utils.GetLogin(), Utils.GetPassword()));
                 command.Parameters.AddWithValue("@model_x", modelX);
                 command.Parameters.AddWithValue("@model_y", modelY);
                 command.Parameters.AddWithValue("@model_z", modelZ);
@@ -135,7 +135,7 @@ namespace Search3dModels.Model
                 NpgsqlDataReader dr = command.ExecuteReader();
                 if (dr.HasRows)
                 {   //TODO: Make getModelFromDataBaseWithScaleFactor() returns NpgsqlDataReader, and use this method with result
-                    GetModelsController.setViewDataGrid(dr);
+                    GetModelsController.SetViewDataGrid(dr);
                 }
                 else
                 {
@@ -157,7 +157,7 @@ namespace Search3dModels.Model
         {
             try
             {
-                NpgsqlConnection connection = DataBaseConnect.getConnection();
+                NpgsqlConnection connection = DataBaseConnect.GetConnection();
                 connection.Open();
 
                 //TODO: Parameterize! Important!
@@ -188,7 +188,7 @@ namespace Search3dModels.Model
         {
             try
             {
-                NpgsqlConnection connection = DataBaseConnect.getConnection();
+                NpgsqlConnection connection = DataBaseConnect.GetConnection();
                 connection.Open();
 
                 //TODO: Parameterize! Important!
@@ -210,7 +210,7 @@ namespace Search3dModels.Model
         {
             try
             {
-                NpgsqlConnection connection = DataBaseConnect.getConnection();
+                NpgsqlConnection connection = DataBaseConnect.GetConnection();
                 connection.Open();
 
                 //TODO: Parameterize! Important!

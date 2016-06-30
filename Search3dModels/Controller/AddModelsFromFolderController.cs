@@ -16,7 +16,7 @@ namespace Search3dModels.Controller
         static int fileerror;
         static string[] fileEntries = null;
 
-        public static void getModelsFromFolder() {
+        public static void GetModelsFromFolder() {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.Description = "Select folder with models";
             fbd.ShowNewFolderButton = false;
@@ -44,26 +44,26 @@ namespace Search3dModels.Controller
         {
             AddModelsFromFolder.modelsFromFolderLB.Items.Add(modelPath);
         }
-        public static void addAllModelstoDb(ListBox listBox)
+        public static void AddAllModelstoDb(ListBox listBox)
         {
             List<string> modelsPaths = new List<string>();
             foreach (String modelPath in listBox.Items){
                     modelsPaths.Add(modelPath);
             }
-            addModelsFromFolder(modelsPaths);        
+            AddModelsFromFolderM(modelsPaths);        
        }
 
-        public static void addSelectedModelstoDb(ListBox listBox)
+        public static void AddSelectedModelstoDb(ListBox listBox)
         {
             List<string> modelsPaths = new List<string>();
             foreach (string modelPath in listBox.SelectedItems)
             {
                 modelsPaths.Add(modelPath);
             }
-            addModelsFromFolder(modelsPaths);
+            AddModelsFromFolderM(modelsPaths);
         }
 
-        public static void addModelsFromFolder(List<string> modelsPaths)
+        public static void AddModelsFromFolderM(List<string> modelsPaths)
         {
             try{
                 foreach (string modelPath in modelsPaths){
@@ -78,8 +78,8 @@ namespace Search3dModels.Controller
                         swModel.Visible = false;
 
                     double[] modelXYZ = SolidWorksUtil.GetModelXYZ((PartDoc)swModel);
-                      DataBaseUtil.addModelToDataBase(swModel.GetTitle(), Convert.ToSingle(modelXYZ[0]), Convert.ToSingle(modelXYZ[1]), Convert.ToSingle(modelXYZ[2]),
-                        AddModelsFromFolder.privateModelCheckBox.Checked, Utils.modelToBytes(swModel));
+                      DataBaseUtil.AddModelToDataBase(swModel.GetTitle(), Convert.ToSingle(modelXYZ[0]), Convert.ToSingle(modelXYZ[1]), Convert.ToSingle(modelXYZ[2]),
+                        AddModelsFromFolder.privateModelCheckBox.Checked, Utils.ModelToBytes(swModel));
 
                     swApp.CloseDoc(swModel.GetTitle()); 
                 }

@@ -150,6 +150,7 @@
             heightInput.Name = "heightInput";
             heightInput.Size = new System.Drawing.Size(100, 20);
             heightInput.TabIndex = 18;
+            heightInput.TextChanged += new System.EventHandler(heightInput_TextChanged);
             // 
             // lengthInput
             // 
@@ -157,6 +158,7 @@
             lengthInput.Name = "lengthInput";
             lengthInput.Size = new System.Drawing.Size(100, 20);
             lengthInput.TabIndex = 19;
+            lengthInput.TextChanged += new System.EventHandler(lengthInput_TextChanged);
             // 
             // widthInput
             // 
@@ -164,6 +166,7 @@
             widthInput.Name = "widthInput";
             widthInput.Size = new System.Drawing.Size(100, 20);
             widthInput.TabIndex = 20;
+            widthInput.TextChanged += new System.EventHandler(widthInput_TextChanged);
             // 
             // scaleFactorInput
             // 
@@ -172,6 +175,7 @@
             scaleFactorInput.Size = new System.Drawing.Size(81, 20);
             scaleFactorInput.TabIndex = 21;
             scaleFactorInput.Text = "15";
+            scaleFactorInput.TextChanged += new System.EventHandler(scaleFactorInput_TextChanged);
             // 
             // resultsDataGridView
             // 
@@ -228,6 +232,7 @@
         public static System.Windows.Forms.TextBox widthInput;
         public static System.Windows.Forms.TextBox scaleFactorInput;
         public static System.Windows.Forms.DataGridView resultsDataGridView;
+
 
 
 

@@ -16,18 +16,18 @@ namespace Search3dModels.Model
 {
     static class Utils
     {
-        static int fileerror;
-        public static double getMinValue(params double[] values)
+        
+        public static double GetMinValue(params double[] values)
         {
             return values.Min();
         }
 
-        public static double getMaxValue(params double[] values)
+        public static double GetMaxValue(params double[] values)
         {
             return values.Max();
         }
 
-        public static byte[] modelToBytes(ModelDoc2 model)
+        public static byte[] ModelToBytes(ModelDoc2 model)
         {
             try
             {
@@ -45,14 +45,14 @@ namespace Search3dModels.Model
                                
                 string targetPath;
 
-                if (getModelsFolder() == null || getModelsFolder().Length == 0)
+                if (GetModelsFolder() == null || GetModelsFolder().Length == 0)
                 {
                     string myDocuments = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
                     targetPath = myDocuments + @"\Search3DModels\Temp\";
                 }
                 else
                 {
-                    targetPath = getModelsFolder() + @"\Temp\";
+                    targetPath = GetModelsFolder() + @"\Temp\";
                 }
                
                 string destinationFile = System.IO.Path.Combine(targetPath, fileName);               
@@ -80,21 +80,20 @@ namespace Search3dModels.Model
             return null;
         }
 
-        public static string createAndSaveModelFromBytesInFolder(string fileName, byte[] byteArray)
+        public static string CreateAndSaveModelFromBytesInFolder(string fileName, byte[] byteArray)
         {
             try
             {
-                MessageBox.Show(Convert.ToString(byteArray), "createAndSaveModelFromBytesInFolder()", MessageBoxButtons.OK);
                 string targetPath;
                 string fileNameWithRes = fileName + ".SLDPRT";
-                if (getModelsFolder() == null || getModelsFolder().Length == 0)
+                if (GetModelsFolder() == null || GetModelsFolder().Length == 0)
                 {
                     string myDocuments = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
                     targetPath = myDocuments + @"\Search3DModels\Models\";
                 }
                 else
                 {
-                    targetPath = getModelsFolder() + @"\Models\";
+                    targetPath = GetModelsFolder() + @"\Models\";
                 }
 
                 string destinationFile = System.IO.Path.Combine(targetPath, fileNameWithRes);
@@ -129,28 +128,28 @@ namespace Search3dModels.Model
         {
             SettingsClass.Instance.login = login;
             SettingsClass.Instance.password = password;
-            return SettingsClass.Instance.writeSettings();
+            return SettingsClass.Instance.WriteSettings();
         }
 
         public static bool SaveModelsFolder(string modelsPath)
         {
             SettingsClass.Instance.modelsPath = modelsPath;
-            return SettingsClass.Instance.writeSettings();
+            return SettingsClass.Instance.WriteSettings();
         }
 
-        public static string getModelsFolder()
+        public static string GetModelsFolder()
         {
-            SettingsClass.Instance.readSettings();
+            SettingsClass.Instance.ReadSettings();
             return SettingsClass.Instance.modelsPath;
         }
-        public static string getLogin()
+        public static string GetLogin()
         {
-            SettingsClass.Instance.readSettings();
+            SettingsClass.Instance.ReadSettings();
             return SettingsClass.Instance.login;
         }
-        public static string getPassword()
+        public static string GetPassword()
         {
-            SettingsClass.Instance.readSettings();
+            SettingsClass.Instance.ReadSettings();
             return SettingsClass.Instance.password;
         }
         public static byte[] ObjectToByteArray(object obj)
@@ -166,14 +165,12 @@ namespace Search3dModels.Model
 
         }
 
-        public static void openModelsInSw()
+        public static void OpenModelsInSw()
         {
             int rowindex = GetModels.resultsDataGridView.CurrentCell.RowIndex;
             int modelId = Convert.ToInt32(GetModels.resultsDataGridView.Rows[rowindex].Cells[0].Value.ToString());
-            string modelName = GetModels.resultsDataGridView.Rows[rowindex].Cells[1].Value.ToString();
-            MessageBox.Show(Convert.ToString(modelId), "modelId", MessageBoxButtons.OK);
-            string modelDest=Utils.createAndSaveModelFromBytesInFolder(modelName, DataBaseUtil.getModelFileById(modelId));
-            
+            string modelName = GetModels.resultsDataGridView.Rows[rowindex].Cells[1].Value.ToString();            
+            string modelDest=Utils.CreateAndSaveModelFromBytesInFolder(modelName, DataBaseUtil.getModelFileById(modelId));            
             SldWorks swApp = Activator.CreateInstance(Type.GetTypeFromProgID("SldWorks.Application")) as SldWorks;
             swApp.Visible = false;
             swApp.OpenDoc6(modelDest, (int)swDocumentTypes_e.swDocPART, (int)swOpenDocOptions_e.swOpenDocOptions_LoadModel, "", 0, 0);

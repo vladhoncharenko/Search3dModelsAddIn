@@ -36,7 +36,7 @@ namespace Search3dModels.Model
                       "<Settings xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n" +
                       "<Login></Login>\n<Password></Password>\n<ModelsPath></ModelsPath>\n</Settings>";
        
-         public bool writeSettings(){ 
+         public bool WriteSettings(){ 
             try{
             var writer = new System.Xml.Serialization.XmlSerializer(typeof(SettingsClass));
 
@@ -61,7 +61,7 @@ namespace Search3dModels.Model
          }
 
 
-      public bool readSettings()
+      public bool ReadSettings()
       {
           try{
               string curFile = @"C:\SolidWorks Data\search3DModels.xml";

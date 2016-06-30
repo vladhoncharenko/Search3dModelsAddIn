@@ -30,12 +30,12 @@ namespace Search3dModels.Model
             double[] modelSizes = new double[3];
             Double[] BoxFeatureDblArray = (Double[])(doc).GetPartBox(true);
 
-            X_max = Utils.getMaxValue(BoxFeatureDblArray[0], BoxFeatureDblArray[3], X_max);
-            X_min = Utils.getMinValue(BoxFeatureDblArray[0], BoxFeatureDblArray[3], X_min);
-            Y_max = Utils.getMaxValue(BoxFeatureDblArray[1], BoxFeatureDblArray[4], Y_max);
-            Y_min = Utils.getMinValue(BoxFeatureDblArray[1], BoxFeatureDblArray[4], Y_min);
-            Z_max = Utils.getMaxValue(BoxFeatureDblArray[2], BoxFeatureDblArray[5], Z_max);
-            Z_min = Utils.getMinValue(BoxFeatureDblArray[2], BoxFeatureDblArray[5], Z_min);
+            X_max = Utils.GetMaxValue(BoxFeatureDblArray[0], BoxFeatureDblArray[3], X_max);
+            X_min = Utils.GetMinValue(BoxFeatureDblArray[0], BoxFeatureDblArray[3], X_min);
+            Y_max = Utils.GetMaxValue(BoxFeatureDblArray[1], BoxFeatureDblArray[4], Y_max);
+            Y_min = Utils.GetMinValue(BoxFeatureDblArray[1], BoxFeatureDblArray[4], Y_min);
+            Z_max = Utils.GetMaxValue(BoxFeatureDblArray[2], BoxFeatureDblArray[5], Z_max);
+            Z_min = Utils.GetMinValue(BoxFeatureDblArray[2], BoxFeatureDblArray[5], Z_min);
           
             modelSizes[0] = Math.Round(Math.Abs(X_max - X_min), 3);
             modelSizes[1] = Math.Round(Math.Abs(Y_max - Y_min), 3);

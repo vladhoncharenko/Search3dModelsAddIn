@@ -38,19 +38,19 @@ private void MyNewForm_FormClosed(object sender, FormClosedEventArgs e)
 }
         private void button1_Click(object sender, EventArgs e)
         {
-            AddModelsFromFolderController.addSelectedModelstoDb(AddModelsFromFolder.modelsFromFolderLB);
+            AddModelsFromFolderController.AddSelectedModelstoDb(AddModelsFromFolder.modelsFromFolderLB);
             this.Close();
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddModelsFromFolderController.getModelsFromFolder();        
+            AddModelsFromFolderController.GetModelsFromFolder();        
         }
 
         private void addAllutton_Click(object sender, EventArgs e)
         {
-            AddModelsFromFolderController.addAllModelstoDb(AddModelsFromFolder.modelsFromFolderLB);
+            AddModelsFromFolderController.AddAllModelstoDb(AddModelsFromFolder.modelsFromFolderLB);
             this.Close();
             
         }

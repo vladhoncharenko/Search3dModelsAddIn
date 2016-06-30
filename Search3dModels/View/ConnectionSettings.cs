@@ -32,19 +32,19 @@ namespace Search3dModels
        
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ConnectionSettingsController.validateAndSaveLoginPAssword()) {
+            if (ConnectionSettingsController.ValidateAndSaveLoginPAssword()) {
                 MessageBox.Show("Your account is connected!", "Success", MessageBoxButtons.OK);
             };     
         }
 
         private void selectFolderToSaveModels_Click(object sender, EventArgs e)
         {
-            ConnectionSettingsController.selectFolder();          
+            ConnectionSettingsController.SelectFolder();          
         }
 
         private void ConnectionSettings_Load(object sender, EventArgs e)
         {
-            ConnectionSettingsController.onLoad();         
+            ConnectionSettingsController.OnLoad();         
         }
 
        

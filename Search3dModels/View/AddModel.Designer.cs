@@ -104,6 +104,7 @@
             nameGetModel.Name = "nameGetModel";
             nameGetModel.Size = new System.Drawing.Size(153, 20);
             nameGetModel.TabIndex = 7;
+            nameGetModel.TextChanged += new System.EventHandler(nameGetModel_TextChanged);
             // 
             // heighGetModel
             // 
@@ -111,6 +112,7 @@
             heighGetModel.Name = "heighGetModel";
             heighGetModel.Size = new System.Drawing.Size(153, 20);
             heighGetModel.TabIndex = 8;
+            heighGetModel.TextChanged += new System.EventHandler(heighGetModel_TextChanged);
             // 
             // lengthGetModel
             // 
@@ -118,6 +120,7 @@
             lengthGetModel.Name = "lengthGetModel";
             lengthGetModel.Size = new System.Drawing.Size(153, 20);
             lengthGetModel.TabIndex = 9;
+            lengthGetModel.TextChanged += new System.EventHandler(lengthGetModel_TextChanged);
             // 
             // widthGetModel
             // 
@@ -125,6 +128,7 @@
             widthGetModel.Name = "widthGetModel";
             widthGetModel.Size = new System.Drawing.Size(153, 20);
             widthGetModel.TabIndex = 10;
+            widthGetModel.TextChanged += new System.EventHandler(widthGetModel_TextChanged);
             // 
             // privateModelCheckBox
             // 
@@ -175,5 +179,7 @@
         public static System.Windows.Forms.TextBox lengthGetModel;
         public static System.Windows.Forms.TextBox widthGetModel;
         public static System.Windows.Forms.CheckBox privateModelCheckBox;
+
+
     }
 }

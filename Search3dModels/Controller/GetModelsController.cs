@@ -11,7 +11,7 @@ namespace Search3dModels.Controller
 {
     static class GetModelsController
     {
-        public static void searchModels()
+        public static void SearchModels()
         {
             if (GetModels.scaleCheckBox.Checked)
             {
@@ -26,7 +26,7 @@ namespace Search3dModels.Controller
             }
         }
 
-        public static void setViewDataGrid(NpgsqlDataReader dr)
+        public static void SetViewDataGrid(NpgsqlDataReader dr)
         {
             GetModels.resultsDataGridView.DataSource = null;
             DataTable dt = null;

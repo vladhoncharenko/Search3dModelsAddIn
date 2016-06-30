@@ -9,7 +9,7 @@ namespace Search3dModels.Model
 {
     class DataBaseConnect
     {
-        public static NpgsqlConnection getConnection()
+        public static NpgsqlConnection GetConnection()
         {
             NpgsqlConnection connection = null;
             try
