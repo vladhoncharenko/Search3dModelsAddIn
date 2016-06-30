@@ -134,6 +134,7 @@
     <Compile Include="Controller\AddModelController.cs" />
     <Compile Include="Controller\AddModelsFromFolderController.cs" />
     <Compile Include="Controller\ConnectionSettingsController.cs" />
+    <Compile Include="Controller\GetModelsController.cs" />
     <Compile Include="Model\DataBaseConnect.cs" />
     <Compile Include="Model\DataBaseUtil.cs" />
     <Compile Include="Model\SettingsClass.cs" />

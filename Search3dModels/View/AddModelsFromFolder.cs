@@ -54,6 +54,11 @@ private void MyNewForm_FormClosed(object sender, FormClosedEventArgs e)
             this.Close();
             
         }
+
+        private void AddModelsFromFolder_Load(object sender, EventArgs e)
+        {
+
+        }
      
                      
     }

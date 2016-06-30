@@ -78,8 +78,7 @@ namespace Search3dModels.Controller
                         swModel.Visible = false;
 
                     double[] modelXYZ = SolidWorksUtil.GetModelXYZ((PartDoc)swModel);
-
-                    DataBaseUtil.addModelToDataBase(swModel.GetTitle(), Convert.ToSingle(modelXYZ[0]), Convert.ToSingle(modelXYZ[1]), Convert.ToSingle(modelXYZ[2]),
+                      DataBaseUtil.addModelToDataBase(swModel.GetTitle(), Convert.ToSingle(modelXYZ[0]), Convert.ToSingle(modelXYZ[1]), Convert.ToSingle(modelXYZ[2]),
                         AddModelsFromFolder.privateModelCheckBox.Checked, Utils.modelToBytes(swModel));
 
                     swApp.CloseDoc(swModel.GetTitle()); 
@@ -89,8 +88,7 @@ namespace Search3dModels.Controller
                 MessageBox.Show(e.Message, "addModelsFromFolder()", MessageBoxButtons.OK);
                 return;
             }
-            MessageBox.Show("Models were added!", "Search 3D Models", MessageBoxButtons.OK);
-          
+            MessageBox.Show("Models were added!", "Search 3D Modelsz", MessageBoxButtons.OK);
             
         }
 

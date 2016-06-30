@@ -42,12 +42,13 @@ namespace Search3dModels
             catch{
 
             }
+            this.Close();
 
         }
 
     private void AddModel_Load(object sender, EventArgs e)
     {
-        AddModelController.setModelSizesInForm();
+        AddModelController.SetModelSizesInForm();
     }
 
     private void button1_Click_1(object sender, EventArgs e)
@@ -55,6 +56,7 @@ namespace Search3dModels
         AddModelController.addModelToDataBase();
         this.Close();
     }
+   
 
     
 }

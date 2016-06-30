@@ -105,6 +105,7 @@
             Controls.Add(addSelectedButton);
             Name = "AddModelsFromFolder";
             Text = "Add Models From Folder";
+            Load += new System.EventHandler(AddModelsFromFolder_Load);
             ResumeLayout(false);
             PerformLayout();
 
@@ -118,6 +119,7 @@
         public static System.Windows.Forms.TextBox selectedPath;
         public static System.Windows.Forms.ListBox modelsFromFolderLB;
         public static System.Windows.Forms.CheckBox privateModelCheckBox;
+
 
 
 

@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
+using Search3dModels.Model;
+using Search3dModels.Controller;
 
 namespace Search3dModels
 {
@@ -33,8 +35,15 @@ namespace Search3dModels
 
         }
 
-      
-      
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+           GetModelsController.searchModels();
+        }
 
+        private void openSelectedButton_Click(object sender, EventArgs e)
+        {
+            Utils.openModelsInSw();
+        }
+              
     }
 }
