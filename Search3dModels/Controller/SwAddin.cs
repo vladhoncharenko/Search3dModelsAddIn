@@ -257,8 +257,8 @@ namespace Search3dModels
 
             int menuToolbarOption = (int)(swCommandItemType_e.swMenuItem | swCommandItemType_e.swToolbarItem);
 
-            cmdIndex1 = cmdGroup.AddCommandItem2("Add Model", -1, "Add your model to data base", "Add Model", 0, "LoadAddModelForm", "", mainItemID1, menuToolbarOption);
-            cmdIndex2 = cmdGroup.AddCommandItem2("Get Models", -1, "Get models from data base", "Get Models", 1, "LoadGetModelsForm", "", mainItemID2, menuToolbarOption);
+            cmdIndex1 = cmdGroup.AddCommandItem2("Add Model", -1, "Add your model to data base", "Add Model", 1, "LoadAddModelForm", "", mainItemID1, menuToolbarOption);
+            cmdIndex2 = cmdGroup.AddCommandItem2("Get Models", -1, "Get models from data base", "Get Models", 0, "LoadGetModelsForm", "", mainItemID2, menuToolbarOption);
             cmdIndex3 = cmdGroup.AddCommandItem2("Connection Settings", -1, "Set preferences to connect to your account", "Connection Settings", 2, "LoadConnectionSettingsForm", "", mainItemID3, menuToolbarOption);
 
 
@@ -267,49 +267,9 @@ namespace Search3dModels
             cmdGroup.Activate();
 
 
-            bool bResult;
-
-            foreach (int type in docTypes)
-            {
-
-                if (type == 1)
-                {
-                    CommandTab cmdTab1;
-                    cmdTab1 = iCmdMgr.GetCommandTab(type, Title);
-
-                    if (cmdTab1 != null & !getDataResult | ignorePrevious)
-                    {
-                        bool res = iCmdMgr.RemoveCommandTab(cmdTab1);
-                        cmdTab1 = null;
-                    }
-                    if (cmdTab1 == null)
-                    {
-                        cmdTab1 = iCmdMgr.AddCommandTab(type, Title);
-
-                        CommandTabBox cmdBox = cmdTab1.AddCommandTabBox();
-
-                        int[] cmdIDs1 = new int[3];
-                        int[] TextType1 = new int[3];
-
-                        cmdIDs1[0] = cmdGroup.get_CommandID(cmdIndex1);
-                        TextType1[0] = (int)swCommandTabButtonTextDisplay_e.swCommandTabButton_TextBelow;
 
 
-                        cmdIDs1[1] = cmdGroup.get_CommandID(cmdIndex2);
-                        TextType1[1] = (int)swCommandTabButtonTextDisplay_e.swCommandTabButton_TextBelow;
 
-                        cmdIDs1[2] = cmdGroup.get_CommandID(cmdIndex3);
-                        TextType1[2] = (int)swCommandTabButtonTextDisplay_e.swCommandTabButton_TextBelow;
-
-                        bResult = cmdBox.AddCommands(cmdIDs1, TextType1);
-                    }
-
-                }
-
-            }
-            thisAssembly = null;
-
-            iBmp.Dispose();
         }
 
 
